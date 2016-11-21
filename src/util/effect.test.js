@@ -27,8 +27,9 @@ test('=== effects ===', (t) => {
   });
 
   t.test('failing promise', (tt) => {
-    const args = [undefined, 2];
-    const eff = effect((a, b) => a + b, args);
+    const eff = effect(() => {
+      throw new Error('nope');
+    }, []);
 
     call(eff)
         .then(() => tt.fail('call should not resolve a failing promise'))
