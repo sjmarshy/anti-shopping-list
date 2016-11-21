@@ -1,5 +1,11 @@
-import './test/effect.js';
+export function effect(fn, args) {
+    return {
+        fn,
+        args,
+        type: 'EFFECT'
+    };
+}
 
-export function build(fn, args) {
-    return {};
+export function call(eff) {
+    return new Promise(res => res(eff.fn.apply(null, eff.args)));
 }
