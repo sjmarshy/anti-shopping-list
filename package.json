@@ -2,6 +2,9 @@
   "name": "anti-shopping-list",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+      "test": "babel src --out-dir .tmp; tape .tmp/**/*.test.js"
+  },
   "author": "Sam <sam.marshall@laterooms.com>",
   "license": "MIT",
   "devDependencies": {
@@ -11,6 +14,7 @@
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
     "eslint": "^3.10.2",
+    "tape": "^4.6.2",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
   }

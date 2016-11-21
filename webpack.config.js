@@ -1,3 +1,9 @@
+const webpack = require('webpack');
+
+new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify('DEV')
+});
+
 module.exports = {
     entry: './src/index.js',
     output: {
