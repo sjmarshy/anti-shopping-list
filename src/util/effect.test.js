@@ -16,22 +16,19 @@ test('=== effects ===', (t) => {
     tt.end();
   });
 
-  t.test('call - success', async (tt) => {
+  t.test('call', async (tt) => {
     const args = [1, 2];
     const expected = 3;
     const eff = effect((a, b) => a + b, args);
     const actual = await call(eff);
 
     tt.equal(actual, expected, 'call should run the effect, returning a promise that resolves to the value');
-    tt.end();
-  });
 
-  t.test('failing promise', (tt) => {
-    const eff = effect(() => {
+    const throwingEff = effect(() => {
       throw new Error('nope');
     }, []);
 
-    call(eff)
+    call(throwingEff)
         .then(() => tt.fail('call should not resolve a failing promise'))
         .catch(() => tt.pass('call should reject the promise if an error is found'))
         .then(() => tt.end());
