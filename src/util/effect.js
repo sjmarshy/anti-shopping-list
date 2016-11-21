@@ -7,13 +7,11 @@ export function effect(fn, args) {
 }
 
 export function call(eff) {
-  return new Promise((res, rej) => {
-    let result;
+  return new Promise((resolve, reject) => {
     try {
-      result = eff.fn.apply(null, eff.args);
+      return resolve(eff.fn.apply(null, eff.args));
     } catch (e) {
-      return rej(e);
+      return reject(e);
     }
-    return res(result);
   });
 }
