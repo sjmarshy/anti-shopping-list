@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "tape -r babel-register -r babel-polyfill ./.tmp/**/*.test.js | tap-spec;"
+    "test": "tape -r babel-register -r babel-polyfill ./src/**/*.test.js | tap-spec;"
   },
   "author": "Sam <sam.marshall@laterooms.com>",
   "license": "MIT",
