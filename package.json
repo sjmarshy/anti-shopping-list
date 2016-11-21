@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-      "test": "babel src --out-dir .tmp; tape .tmp/**/*.test.js"
+    "test": "tape -r babel-register -r babel-polyfill ./.tmp/**/*.test.js | tap-spec;"
   },
   "author": "Sam <sam.marshall@laterooms.com>",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.18.0",
     "eslint": "^3.10.2",
+    "tap-spec": "^4.1.1",
     "tape": "^4.6.2",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
