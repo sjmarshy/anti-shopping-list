@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "tape -r babel-register -r babel-polyfill ./src/**/*.test.js | tap-spec;"
+    "test": "tape -r babel-register -r babel-polyfill ./src/**/*.test.js | faucet;"
   },
   "author": "Sam <sam.marshall@laterooms.com>",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "eslint-plugin-import": "^2.1.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.6.0",
-    "tap-spec": "^4.1.1",
+    "faucet": "^0.0.1",
     "tape": "^4.6.2",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2"
