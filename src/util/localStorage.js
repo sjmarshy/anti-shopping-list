@@ -10,4 +10,6 @@ try {
 
 export default localStorage;
 
+// the best thing about this, is it gets called in an `effect` - it never gets
+// directly run - so if there's a JSON parse error it'll end up in a catch
 export const getItemAndParse = compose(JSON.parse, localStorage.getItem);
