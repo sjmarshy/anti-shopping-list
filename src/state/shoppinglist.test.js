@@ -49,10 +49,22 @@ test('shoppinglist actionHandlers', (t) => {
 
     t.deepEqual(doubleActual, expected, 'should not add the same link twice');
 
+    const state = [];
+
+    actionHandlers(state)[action.type](action.payload);
+
+    t.equal(0, state.length, 'addition should not effect the original state');
+
     const removeAction = actionCreators[actions.REMOVE](link);
     const removeExpected = [];
     const removeActual = actionHandlers([action.payload])[removeAction.type](removeAction.payload);
 
     t.deepEqual(removeActual, removeExpected, 'should remove a shoppinglist item from state based on the link');
+
+    const state2 = [action.payload];
+
+    actionHandlers(state2)[removeAction.type](removeAction.payload);
+
+    t.equal(1, state2.length, 'remove should not affect the original state');
     t.end();
 });
