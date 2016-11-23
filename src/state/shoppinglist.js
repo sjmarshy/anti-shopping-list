@@ -1,4 +1,5 @@
 import { shoppinglistContainsItem } from '../lib/shoppinglist';
+import reducer from './reducer';
 
 export const actions = {
     ADD: 'asl/shoppinglist/add',
@@ -26,3 +27,7 @@ export const actionHandlers = state => ({
         }
     },
 });
+
+const defaultState = [];
+
+export default reducer(defaultState, actionHandlers);
