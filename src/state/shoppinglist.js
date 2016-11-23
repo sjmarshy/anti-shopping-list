@@ -4,9 +4,11 @@ import reducer from './reducer';
 export const actions = {
     ADD: 'asl/shoppinglist/add',
     REMOVE: 'asl/shoppinglist/remove',
+    LOAD: 'asl/shoppinglist/load',
 };
 
 export const actionCreators = {
+    [actions.LOAD]: () => ({ type: actions.LOAD }),
     [actions.ADD]: payload => ({ type: actions.ADD, payload }),
     [actions.REMOVE]: payload => ({ type: actions.REMOVE, payload }),
 };
@@ -26,6 +28,7 @@ export const actionHandlers = state => ({
             return state;
         }
     },
+    [actions.LOAD]: payload => payload,
 });
 
 const defaultState = [];
