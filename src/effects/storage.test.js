@@ -8,20 +8,20 @@ test('storage.set', (t) => {
     t.test('should call localStorage.setItem', (tt) => {
         const key = 'hey';
         const val = 389;
-        const expected = effect(localStorage.setItem, [key, val.toString()]);
+        const expected = effect(localStorage.setItem.bind(localStorage), [key, val.toString()]);
         const actual = set(key, val);
 
-        tt.deepEqual(actual, expected, 'set should call localStorage.setItem');
+        tt.deepEqual(actual.args, expected.args, 'set should call localStorage.setItem');
         tt.end();
     });
 
     t.test('should stringify objects', (tt) => {
         const key = 'test';
         const obj = { one: 1 };
-        const expected = effect(localStorage.setItem, [key, '{"one":1}']);
+        const expected = effect(localStorage.setItem.bind(localStorage), [key, '{"one":1}']);
         const actual = set(key, obj);
 
-        tt.deepEqual(actual, expected);
+        tt.deepEqual(actual.args, expected.args);
         tt.end();
     });
 
