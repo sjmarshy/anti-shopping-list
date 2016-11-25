@@ -1,13 +1,7 @@
 import 'babel-polyfill'; // eslint-disable-line
-import store from './store';
-import { actions, actionCreators } from './state/shoppinglist';
+import React from 'react';
+import { render } from 'react-dom';
 
-store.subscribe(() => console.log(store.getState())); // eslint-disable-line
-store.subscribe(() => console.log(localStorage)); // eslint-disable-line
+import App from './containers/App';
 
-store.dispatch(actionCreators[actions.LOAD]());
-setTimeout(() => {
-    store.dispatch(actionCreators[actions.ADD]({
-        link: 'hih',
-    }));
-}, 2000);
+render(<App />, window.document.querySelector('[id=app]'));
