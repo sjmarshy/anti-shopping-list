@@ -1,4 +1,3 @@
-/* eslint import/prefer-default-export: 0 */
 import localStorage, { getItemAndParse } from '../util/localStorage';
 import { effect } from '../util/effect';
 

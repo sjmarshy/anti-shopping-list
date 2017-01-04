@@ -1,3 +1,6 @@
-import React from 'react';
+import { h } from 'preact';
+import AddItem from '../components/AddItem';
 
-export default () => <div className="app-Container" >Hello, world!</div>;
+export default () => <div className="app-Container" >
+    <AddItem/>
+</div>;
