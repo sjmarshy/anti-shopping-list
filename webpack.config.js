@@ -11,7 +11,7 @@ module.exports = {
         filename: 'app.js',
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
