@@ -2,11 +2,13 @@
     "env": {
         "test": {
             "presets": [ "latest" ],
-            "plugins": [ "babel-plugin-transform-react-jsx" ]
+            "plugins": [
+                [ "babel-plugin-transform-react-jsx", { "pragma": "h" } ]
+            ]
         },
         "development": {
             "plugins": [
-                "babel-plugin-transform-react-jsx",
+                [ "babel-plugin-transform-react-jsx", { "pragma": "h" } ],
                 'transform-es2015-template-literals',
                 'transform-es2015-literals',
                 'transform-es2015-function-name',
