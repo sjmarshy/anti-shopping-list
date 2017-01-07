@@ -1,7 +1,5 @@
 import 'babel-polyfill'; // eslint-disable-line
-import { render, h }  from 'preact';
-
-import App from './containers/App';
+import { render, h }  from 'preact'; // eslint-disable-line
 
 if (!window.document.querySelector('[id=app]')) {
     const appTarget = window.document.createElement('div');
@@ -10,3 +8,4 @@ if (!window.document.querySelector('[id=app]')) {
 }
 
 render(<App />, window.document.querySelector('[id=app]'));
+
