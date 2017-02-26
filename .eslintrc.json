@@ -10,9 +10,12 @@
     ],
     "rules": {
         "indent": [2, 4],
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
         "no-else-return": 0,
         "react/jsx-filename-extension": 0,
         "react/prefer-es6-class": 0,
-        "react/react-in-jsx-scope": 0
+        "react/react-in-jsx-scope": 0,
+        "react/prop-types": 0
     }
 }
